@@ -4,7 +4,83 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--------- Favicon ----------->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+
+    <!--------- Icon Font CDN ----------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--------- Main Style ----------->
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Welcome || Plant Shop</title>
   </head>
-  <body></body>
+  <body>
+    <div class="wrap">
+      <!----- Header ------>
+      <header class="header" id="header">
+        <div class="container nav">
+          <a href="#" class="nav-logo">
+            <i class="ri-leaf-line nav-logo-icon"></i> Plantex
+          </a>
+
+          <div class="nav-menu" id="nav-menu">
+            <ul class="nav-list">
+              <li class="nav-item active">
+                <a href="#home" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="about" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="products" class="nav-link">Products</a>
+              </li>
+              <li class="nav-item">
+                <a href="#faqs" class="nav-link">FAQs</a>
+              </li>
+              <li class="nav-item">
+                <a href="community" class="nav-link">Community</a>
+              </li>
+            </ul>
+
+            <div class="nav-btns">
+              <a href="#" class="nav-icon"><i class="ri-login-box-line"></i></a>
+              <a href="#" class="nav-icon"
+                ><i class="ri-shopping-cart-2-line"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <!-- End of Header Container -->
+      </header>
+
+      <main class="main">
+        <section class="home" id="home">
+          <div class="container home-contents">
+            <div class="home-txt">
+              <h1 class="home-title">
+                Plants will make <br />
+                your life better
+              </h1>
+              <p class="home-desc">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has
+              </p>
+              <a href="#" class="button">
+                Explore <i class="ri-arrow-right-down-line"></i>
+              </a>
+            </div>
+            <div class="home-image">
+              <img src="/img/home.png" alt="" />
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
 </html>

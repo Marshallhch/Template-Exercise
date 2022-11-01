@@ -1,0 +1,202 @@
+/*======= Google Font =========*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/*======= Guided Style =========*/
+:root {
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --hue: 152;
+  --first-color: hsl(var(--hue), 24%, 32%);
+  --first-color-alt: hsl(var(--hue), 24%, 28%);
+  --first-color-light: hsl(var(--hue), 24%, 66%);
+  --first-color-lighten: hsl(var(--hue), 24%, 92%);
+  --title-color: hsl(var(--hue), 4%, 15%);
+  --text-color: hsl(var(--hue), 4%, 35%);
+  --text-color-light: hsl(var(--hue), 4%, 55%);
+  --body-color: hsl(var(--hue), 0%, 100%);
+  --container-color: #fff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+}
+
+/*======= Reset Style =========*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  _font-size: var(--normal-font-size);
+}
+
+body {
+  margin: var(--header-height) 0 0 0;
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: 0.4s; /*For animation dark mode*/
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*======= Common Style =========*/
+.wrap {
+  width: 100%;
+  height: auto;
+  _overflow: hidden;
+}
+.container {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  max-width: 1024px;
+}
+
+/* header 배경색 : var(--body-color)
+로고 글자크기 : 1.15rem
+로고 나뭇입 색 : var(--first-color)
+네비게이션 글자 크기 : var(--normal-font-size) */
+
+/*======= Main Style =========*/
+/*======= 1. Header Style =========*/
+.header {
+  box-shadow: 0 5px 10px #efefef;
+}
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header .nav-logo {
+  color: var(--title-color);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.header .nav-logo .nav-logo-icon {
+  color: var(--first-color);
+}
+
+.header .nav-menu {
+  display: flex;
+  column-gap: 1.5rem;
+}
+.header .nav-menu .nav-list {
+  display: flex;
+  column-gap: 1.5rem;
+  align-items: center;
+}
+.header .nav-menu .nav-list .nav-item.active > .nav-link {
+  color: var(--first-color);
+}
+.header .nav-menu .nav-list .nav-item.active > .nav-link::before {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--first-color);
+  position: absolute;
+  left: 0;
+  bottom: 0.625rem;
+}
+.header .nav-menu .nav-list .nav-link {
+  color: var(--title-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  padding: 1.25rem 0;
+  display: block;
+  position: relative;
+}
+.header .nav-menu .nav-btns {
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+.header .nav-menu .nav-icon {
+  display: flex;
+  color: var(--title-color);
+  flex-direction: column;
+  font-size: var(--h2-font-size);
+}
+
+/*======= 2. Home Style =========*/
+.home .home-contents {
+  display: flex;
+}
+.home .home-contents > div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.home .home-contents > div.home-image {
+  align-items: center;
+}
+.home .home-contents > div.home-image > img {
+  width: 350px;
+}
+
+/*======= Media Query Style =========*/
+
+/*======= Memo =========*/
+/* 1. 박스, 텍스트 그림자 효과 */
+.box {
+  width: 200px;
+  height: 100px;
+  background: yellow;
+  box-shadow: 0 10px 20px red;
+  /* 박스와 글자에 그림자 효과를 표현한다. 첫번째 값은 x축, 두번째 값은 y축, 세번째 값은 번짐, 네번째는 그림자 색을 나타낸다 */
+}
+
+/* 메인 타이틀 : 3.5rem, var(--font-semi-bold), color - var(--title-color)
+작은 글씨 설명 : color - var(--text-color)
+버튼 : var(--font-medium)
+사진 넓이 : 350px */
