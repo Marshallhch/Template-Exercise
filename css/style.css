@@ -31,6 +31,19 @@
   --font-semi-bold: 600;
 }
 
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+  }
+}
+
 /*======= Reset Style =========*/
 * {
   box-sizing: border-box;
@@ -48,7 +61,7 @@ button,
 input,
 textarea {
   font-family: var(--body-font);
-  _font-size: var(--normal-font-size);
+  font-size: var(--normal-font-size);
 }
 
 body {
@@ -90,11 +103,36 @@ img {
   height: auto;
   _overflow: hidden;
 }
+section {
+  padding: 8rem 0 1rem;
+}
+.section-title {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+.title-center {
+  text-align: center;
+}
 .container {
   width: 100%;
   height: auto;
   margin: auto;
   max-width: 1024px;
+}
+
+.button {
+  color: #fff;
+  font-size: var(--h3-font-size);
+  -font-weight: var(--font-medium);
+  background: var(--first-color);
+  width: fit-content;
+  padding: 0.75rem 1.563rem;
+  border-radius: 8px;
+  margin-top: 1.563rem;
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
 }
 
 /* header 배경색 : var(--body-color)
@@ -168,10 +206,14 @@ img {
 }
 
 /*======= 2. Home Style =========*/
+.home {
+  padding: 13rem 0 5rem;
+}
 .home .home-contents {
   display: flex;
+  position: relative;
 }
-.home .home-contents > div {
+.home .home-contents > .home-box {
   width: 50%;
   display: flex;
   justify-content: center;
@@ -183,6 +225,143 @@ img {
 .home .home-contents > div.home-image > img {
   width: 350px;
 }
+
+.home .home-contents .home-title {
+  font-size: 3.5rem;
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+  line-height: 4.5rem;
+  margin-bottom: 1.563rem;
+}
+.home .home-contents .home-desc {
+  color: var(--text-color);
+}
+.home .home-contents .home-social {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 6rem;
+}
+.home .home-social .home-social-txt {
+  transform: rotate(90deg);
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+  font-size: var(--small-font-size);
+}
+.home .home-social .home-social-txt::after {
+  content: "";
+  width: 50%;
+  height: 2px;
+  background-color: var(--first-color);
+  position: absolute;
+  left: 5rem;
+}
+.home .home-social .home-social-links {
+  display: flex;
+  flex-direction: column;
+}
+.home .home-social .home-social-link {
+  color: var(--first-color);
+  font-size: 1.15rem;
+}
+
+/*======= About Section Style =========*/
+.about .about-contents {
+  display: flex;
+  column-gap: 7rem;
+}
+.about .about-contents .about-box {
+  width: 50%;
+}
+.about .about-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about .about-img img {
+  width: 380px;
+}
+.about .about-txt .about-desc {
+  margin: 1.563rem 0;
+}
+.about .about-txt .about-details {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.about .about-txt .about-detail {
+  font-size: var(--small-font-size);
+  display: flex;
+  column-gap: 0.5rem;
+  align-items: center;
+}
+.about .about-txt .about-btn {
+  color: var(--first-color);
+  display: flex;
+  column-gap: 0.5rem;
+  font-weight: var(--font-medium);
+  margin-top: 1.563rem;
+  align-items: center;
+}
+
+/*======= Step Section Style =========*/
+.step .step-wrap {
+  width: 100%;
+  background: var(--first-color);
+  border-radius: 1rem;
+  padding: 3.5rem 2.5rem;
+}
+
+.step .section-title {
+  color: #fff;
+  margin-bottom: 2.5rem;
+}
+
+.step .step-boxes {
+  display: flex;
+  _justify-content: space-between;
+}
+.step .step-box {
+  width: 33.33%;
+  padding: 1rem;
+  _background: #fff;
+  _border-radius: 1rem;
+}
+.step .step-box > div {
+  background: #fff;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+}
+
+.step .step-box h3 {
+  font-weight: var(--font-medium);
+  font-size: var(--h2-font-size);
+  background: var(--first-color);
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  color: #fff;
+  width: fit-content;
+}
+.step .step-box h4 {
+  margin: 1.125rem 0;
+}
+.step .step-box p {
+  font-size: var(--small-font-size);
+}
+
+/* .step .step-box {
+  background: #fff;
+  width: 30%;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+} */
 
 /*======= Media Query Style =========*/
 
@@ -200,3 +379,6 @@ img {
 작은 글씨 설명 : color - var(--text-color)
 버튼 : var(--font-medium)
 사진 넓이 : 350px */
+
+/* 큰 글씨 :font-size: var(--h1-font-size), font-weight: var(--font-semi-bold), color: var(--title-color)
+사진 크기 : 가로 380px */
