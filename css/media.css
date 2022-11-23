@@ -34,8 +34,49 @@
   }
 
   /*======= Header Style =========*/
+  .header {
+    position: relative;
+  }
   .header .nav-menu .nav-list {
-    display: none;
+    _display: none;
+    position: absolute;
+    background: var(--first-color);
+    right: -50%;
+    top: 100%;
+    display: block;
+    width: 50%;
+    padding: 2rem 0;
+    height: 100vh;
+  }
+  .header .nav-menu .nav-list .nav-link {
+    color: #fff;
+    padding: 0.75rem 2rem 0.75rem 0;
+    _padding-right: 2rem;
+  }
+  .header .nav-menu .nav-list .nav-item.active > .nav-link {
+    color: var(--first-color-lighten);
+  }
+  .header .nav-menu .nav-list .nav-item.active > .nav-link::before {
+    height: 2px;
+    background: #fff;
+    width: 0;
+    right: 2rem;
+    left: unset;
+  }
+
+  @keyframes ani-wid {
+    from {
+      width: 0;
+    }
+    to {
+      width: 30%;
+    }
+  }
+  .header .nav-menu li {
+    text-align: right;
+  }
+  .header .nav-menu li:not(:last-child) {
+    border-bottom: 0;
   }
   .header .nav-menu .nav-btns {
     column-gap: 1rem;
