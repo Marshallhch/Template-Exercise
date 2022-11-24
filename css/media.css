@@ -40,28 +40,39 @@
   .header .nav-menu .nav-list {
     _display: none;
     position: absolute;
-    background: var(--first-color);
+    /* 투명도 상속을 방지하기 위해 rgba를 사용한다. a에 해당하는 소수가 투명도다 */
+    background: rgba(255, 255, 255, 0.9);
+    _opacity: 0.5;
+    transition: all 0.3s;
     right: -50%;
-    top: 100%;
+    top: 103%;
     display: block;
     width: 50%;
     padding: 2rem 0;
     height: 100vh;
+    box-shadow: 0 5px 5px #efefef;
   }
+
+  .header .nav-menu .nav-list.show {
+    right: 0;
+  }
+
   .header .nav-menu .nav-list .nav-link {
-    color: #fff;
+    color: var(--first-color);
     padding: 0.75rem 2rem 0.75rem 0;
     _padding-right: 2rem;
+    width: fit-content;
   }
-  .header .nav-menu .nav-list .nav-item.active > .nav-link {
+  /* .header .nav-menu .nav-list .nav-item.active > .nav-link {
     color: var(--first-color-lighten);
-  }
+  } */
   .header .nav-menu .nav-list .nav-item.active > .nav-link::before {
     height: 2px;
-    background: #fff;
+    background: var(--first-color);
     width: 0;
     right: 2rem;
     left: unset;
+    bottom: 5px;
   }
 
   @keyframes ani-wid {
@@ -69,11 +80,13 @@
       width: 0;
     }
     to {
-      width: 30%;
+      width: calc(100% - 2rem);
     }
   }
   .header .nav-menu li {
-    text-align: right;
+    _text-align: right;
+    display: flex;
+    justify-content: end;
   }
   .header .nav-menu li:not(:last-child) {
     border-bottom: 0;
